@@ -8,8 +8,8 @@
     "dark": "#1252BF"
   },
   "favicon": {
-    "light": "/favicon.ico",
-    "dark": "/favicon.ico"
+    "light": "/favicon.png",
+    "dark": "/favicon.png"
   },
   "navigation": {
     "tabs": [
