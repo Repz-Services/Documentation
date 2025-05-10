@@ -1,0 +1,96 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Helpcenter",
+  "colors": {
+    "primary": "#1252BF",
+    "light": "#1252BF",
+    "dark": "#1252BF"
+  },
+  "favicon": "/favicon.ico",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "changelog"
+            ]
+          },
+          {
+            "group": "Bio",
+            "pages": [
+              "bio/assets",
+              "bio/colors",
+              "bio/background_effects",
+              "bio/cursor_effects",
+              "bio/text_effects",
+              "bio/fonts",
+              "bio/metadata",
+              "bio/widgets"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "account/change_username",
+              "account/change_alias",
+              "account/change_password"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "href": "https://repz.lol",
+          "icon": "house"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://repz.lol/discord",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/icon transparent.png",
+    "dark": "/logo/icon transparent.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Discord",
+        "href": "https://repz.lol/discord"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://repz.lol/dashboard"
+    }
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://repz.lol/discord",
+      "github": "https://github.com/repz-services"
+    }
+  }
+}
