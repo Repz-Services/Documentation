@@ -1,0 +1,171 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Search Queries within Repz.lol API",
+    "description": "Quickly search for public Repz.lol User Information.",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://repz.lol/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/user/search": {
+      "get": {
+        "description": "Search for users within the Repz.lol platform",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Search user by their Username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "Search user by their User ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Search user by their High Priority Unique Identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserSearch"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown Error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserSearch": {
+        "required": ["user_id"],
+        "type": "object",
+        "properties": {
+          "username": {
+            "description": "Unique username of the user",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "Unique identifier of the user",
+            "type": "integer",
+            "format": "int64"
+          },
+          "bio": {
+            "description": "User's bio information",
+            "type": "object",
+            "properties": {
+              "Lorem ipsum": {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "type": "object",
+                "properties": {
+                  "consectetur": {
+                    "description": "Lorem ipsum dolor sit amet.",
+                    "type": "string"
+                  },
+                  "amet": {
+                    "description": "Lorem ipsum dolor sit amet, consectetur.",
+                    "type": "string"
+                  }
+                }
+              },
+              "dolor sit": {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "type": "object",
+                "properties": {
+                  "consectetur": {
+                    "description": "Lorem ipsum dolor sit amet.",
+                    "type": "string"
+                  },
+                  "amet": {
+                    "description": "Lorem ipsum dolor sit amet, consectetur.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "required": ["error"],
+        "type": "object",
+        "properties": {
+          "error": {
+            "description": "Error Message",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

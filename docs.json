@@ -60,6 +60,12 @@
             "pages": [
               "api-reference/introduction"
             ]
+          },
+          {
+            "group": "User",
+            "pages": [
+              "api-reference/user/search"
+            ]
           }
         ]
       }
